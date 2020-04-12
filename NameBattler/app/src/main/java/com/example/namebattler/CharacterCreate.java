@@ -8,13 +8,14 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-public class PartySelect extends AppCompatActivity {
+public class CharacterCreate extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.activity_select_party);
+        setContentView(R.layout.activity_character_create);
         // コードからFragmentを追加
 
         // Fragmentの追加や削除といった変更を行う際は、Transactionを利用します
@@ -34,9 +35,10 @@ public class PartySelect extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), CharacterList.class);
+                Intent intent = new Intent(getApplication(), CharacterCreateComplete.class);
                 startActivity(intent);
             }
         });
     }
+
 }

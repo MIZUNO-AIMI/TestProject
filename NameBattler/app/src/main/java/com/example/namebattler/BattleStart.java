@@ -1,18 +1,18 @@
 package com.example.namebattler;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class BattleStart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_start_battle);
 
         //ボタンを設定
         Button button1 = this.findViewById(R.id.button1);
@@ -29,10 +29,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                finish();
+                Intent intent = new Intent(getApplication(), PartySelect.class);
+                startActivity(intent);
             }
         });
     }
-
-
 }
