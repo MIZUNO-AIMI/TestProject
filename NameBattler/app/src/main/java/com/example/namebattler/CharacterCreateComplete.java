@@ -14,6 +14,9 @@ public class CharacterCreateComplete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // データを渡す為のBundleを生成し、渡すデータを内包させる
+        Bundle bundle = new Bundle();
+        bundle.putString("TITLE", "キャラ作成");
 
         setContentView(R.layout.activity_character_complete);
         // コードからFragmentを追加
@@ -22,6 +25,10 @@ public class CharacterCreateComplete extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // Fragmentを作成します
         CharacterListFragment fragment = new  CharacterListFragment();
+
+        // setArgumentsで先ほどのbundleをセットする
+        fragment.setArguments(bundle);
+
         // 新しく追加を行うのでaddを使用します
         // 他にも、よく使う操作で、replace removeといったメソッドがあります
         // メソッドの1つ目の引数は対象のViewGroupのID、2つ目の引数は追加するfragment
@@ -30,22 +37,22 @@ public class CharacterCreateComplete extends AppCompatActivity {
         transaction.commit();
 
         //ボタンを設定
-        Button button1 = this.findViewById(R.id.button1);
-        Button button2 = this.findViewById(R.id.button2);
+        Button button5 = this.findViewById(R.id.button5);
+        Button button6 = this.findViewById(R.id.button6);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // アクティビティを終了させる事により、一つ前のアクティビティへ戻る事が出来る。
                 finish();
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplication(), MainActivity.class);
-                startActivity(intent);
+                Intent intent5 = new Intent(getApplication(), CharacterList.class);
+                startActivity(intent5);
             }
         });
     }

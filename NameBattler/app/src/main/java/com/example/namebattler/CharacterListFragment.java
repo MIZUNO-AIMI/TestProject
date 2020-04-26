@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class CharacterListFragment extends Fragment {
 
@@ -19,6 +20,14 @@ public class CharacterListFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         // 先ほどのレイアウトをここでViewとして作成します
         View view = inflater.inflate(R.layout.fragment_character_list, container, false);
+
+        Bundle bundle = getArguments();
+        String title = bundle.getString("TITLE");
+
+        TextView textView = view.findViewById(R.id.textView);
+
+        // テキストを設定
+        textView.setText(title);
 
         //ボタンを設定
         Button button1 = view.findViewById(R.id.button1);

@@ -15,16 +15,18 @@ public class BattleMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_battle);
 
         //ボタンを設定
-        Button button1 = this.findViewById(R.id.button1);
-        Button button2 = this.findViewById(R.id.button2);
+        Button button11 = this.findViewById(R.id.button11);
+        Button button12 = this.findViewById(R.id.button12);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(getApplication(), TacticsSelect.class);
+                startActivity(intent);
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

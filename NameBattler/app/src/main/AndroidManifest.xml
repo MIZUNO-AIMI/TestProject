@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CharacterList"></activity>
+        <activity android:name=".CharacterCreate"></activity>
+        <activity android:name=".CharacterCreateComplete"></activity>
+        <activity android:name=".PartySelect"></activity>
+        <activity android:name=".BattleStart"></activity>
+        <activity android:name=".BattleMainActivity"></activity>
+        <activity android:name=".TacticsSelect"></activity>
+        <activity android:name=".BattleResult"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
