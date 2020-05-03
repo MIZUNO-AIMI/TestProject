@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -22,6 +23,7 @@ public class CharacterCreate extends AppCompatActivity {
 
         setContentView(R.layout.activity_character_create);
 
+        EditText editText = findViewById(R.id.edit_text1);
 
         // Fragmentの追加や削除といった変更を行う際は、Transactionを利用します
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
