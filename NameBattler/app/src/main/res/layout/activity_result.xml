@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".BattleResult">
 
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
     <Button
         android:id="@+id/button13"
         android:layout_width="350dp"

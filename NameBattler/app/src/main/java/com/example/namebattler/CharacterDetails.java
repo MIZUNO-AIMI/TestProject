@@ -16,7 +16,9 @@ public class CharacterDetails extends AppCompatActivity {
 
         // データを渡す為のBundleを生成し、渡すデータを内包させる
         Bundle bundle = new Bundle();
+        Bundle bundle2 = new Bundle();
         bundle.putString("TITLE", "キャラ詳細");
+        bundle2.putInt("PageNumber", 2);
 
         // コードからFragmentを追加
 

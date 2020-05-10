@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 public class BattleMainActivity extends AppCompatActivity {
 
@@ -13,6 +14,10 @@ public class BattleMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_battle);
+
+        // データを渡す為のBundleを生成し、渡すデータを内包させる
+        Bundle bundle = new Bundle();
+        bundle.putString("TITLE", "バトル");
 
         //ボタンを設定
         Button button11 = this.findViewById(R.id.button11);
@@ -33,5 +38,22 @@ public class BattleMainActivity extends AppCompatActivity {
 
             }
         });
+
+        // コードからFragmentを追加
+
+        // Fragmentの追加や削除といった変更を行う際は、Transactionを利用します
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        // Fragmentを作成します
+        BattleMainFragment fragment = new  BattleMainFragment();
+
+        // setArgumentsで先ほどのbundleをセットする
+        fragment.setArguments(bundle);
+
+        // 新しく追加を行うのでaddを使用します
+        // 他にも、よく使う操作で、replace removeといったメソッドがあります
+        // メソッドの1つ目の引数は対象のViewGroupのID、2つ目の引数は追加するfragment
+        transaction.add(R.id.container, fragment);
+        // 最後にcommitを使用することで変更を反映します
+        transaction.commit();
     }
 }
